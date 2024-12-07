@@ -134,7 +134,18 @@ namespace CustomerOrderViewer2._0
 
         private static void UpsertCustomerOrder(string userId)
         {
-           
+            Console.WriteLine("Note: For updating insert existing CustomerOrderId,\nfor new entries enter -1.");
+
+            Console.WriteLine("Enter CustomerOrderId:");
+            int newCustomerOrderId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter CustomerId:");
+            int newCustomerId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter ItemId:");
+            int newItemId = Convert.ToInt32(Console.ReadLine());
+
+            _customerOrderCommand.Upsert(newCustomerOrderId, newCustomerId, newItemId, userId);
         }
     }
 }
