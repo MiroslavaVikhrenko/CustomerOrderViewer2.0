@@ -111,7 +111,7 @@ namespace CustomerOrderViewer2._0
             {
                 foreach (CustomerOrderDetailModel customerOrderDetail in customerOrderDetails)
                 {
-                    Console.WriteLine(String.Format("{0}: Fullname: {1} {2} (Id: {3}) - purchased {4} for {5} (Id: {6}",
+                    Console.WriteLine(String.Format("{0}: Fullname: {1} {2} (Id: {3}) - purchased {4} for {5} (Id: {6})",
                         customerOrderDetail.CustomerOrderId,
                         customerOrderDetail.FirstName,
                         customerOrderDetail.LastName,
@@ -124,12 +124,15 @@ namespace CustomerOrderViewer2._0
             }
         }
 
-        private static void DeleteCustomerOrder(string? userId)
+        private static void DeleteCustomerOrder(string userId)
         {
-           
+            Console.WriteLine("Enter CustomerOrderId:");
+            int customerOrderId = Convert.ToInt32(Console.ReadLine());
+
+            _customerOrderCommand.Delete(customerOrderId, userId);
         }
 
-        private static void UpsertCustomerOrder(string? userId)
+        private static void UpsertCustomerOrder(string userId)
         {
            
         }
