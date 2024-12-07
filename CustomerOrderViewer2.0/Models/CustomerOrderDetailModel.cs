@@ -12,7 +12,7 @@ namespace CustomerOrderViewer2._0.Models
         public int CustomerId { get; set; }
         public int ItemId { get; set; }
         public string FirstName { get; set; }
-        public string MiddleName { get; set; }
+        public string LastName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
     }
